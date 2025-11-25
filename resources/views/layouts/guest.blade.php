@@ -12,13 +12,13 @@
 
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="font-sans antialiased">
+    <body class="font-sans antialiased overflow-hidden">
         
-        <div class="flex min-h-screen bg-gray-100">
+        <div class="flex min-h-screen bg-custom-dark">
 
             <div class="flex-1 flex flex-col overflow-hidden">
                 
-                <header class="h-16 bg-white shadow-sm flex items-center justify-between px-6">
+                <header class="h-16 bg-custom-dark shadow-sm flex items-center justify-between px-6">
 
                     <div class="h-16 flex items-center justify-center border-b">
                         <span class="text-2xl font-bold text-green-600">SOFTLEARN</span>
@@ -33,7 +33,7 @@
                     </div>
                 </header>
                 
-                <main class="flex items-center justify-center min-h-screen">
+                <main class="flex items-start justify-center pt-12 pb-10 **min-h-screen**">
                     {{ $slot }}    
                 </main>
             </div>

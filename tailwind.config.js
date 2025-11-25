@@ -14,11 +14,21 @@ export default {
 
     theme: {
         extend: {
-            fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
-            },
-        },
+          colors: {
+            'custom-texto': '#292929',
+            'custom-dark': '#EFEFEF',
+            'custom-card': '#BDBDBD',
+            'custom-input': '#A0A0A0',
+            'custom-button': '#1E1E1E',
+          },
+          fontFamily: {
+            inria: ['"Inria Serif"', 'serif'],
+            inter: ['"Inter"', 'sans-serif'],
+            sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+          }
+        }
     },
+
 
     plugins: [forms],
 };

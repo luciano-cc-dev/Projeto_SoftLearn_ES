@@ -1,8 +1,8 @@
 <x-guest-layout>
  
-    <div class="w-full max-w-4xl mx-auto my-10 px-6 py-8 bg-white border border-gray-200 shadow-md sm:rounded-lg">
+    <div class="w-full max-w-4xl mx-auto my-6 px-6 py-8 bg-white border border-gray-200 shadow-md sm:rounded-lg mt-[-20px]">
 
-        <h1 class="text-2xl text-center text-black mb-6">Registre-se</h1>
+        <h1 class="text-2xl text-center text-black mb-4">Registre-se</h1>
 
         <div class="flex flex-col md:flex-row items-start md:items-center gap-6">
 
@@ -78,5 +78,11 @@
         </div>
 
     </div>
+    <div class="fixed bottom-[-96px] w-full z-0"> 
+        <svg id="bg-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path id="bg-svg-path" fill="#16a24b" fill-opacity="1" d="M0,128L48,154.7C96,181,192,235,288,234.7C384,235,480,181,576,186.7C672,192,768,256,864,266.7C960,277,1056,235,1152,202.7C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+        </svg>
+    </div>
+
 
 </x-guest-layout>
