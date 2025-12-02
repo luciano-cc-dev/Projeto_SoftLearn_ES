@@ -4,12 +4,11 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AulaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ModuleController;
-
+use App\Http\Controllers\CompeticaoController;
 
 Route::get('/', function () {
     return view('welcome');
 });
-
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -17,11 +16,15 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::middleware(['auth']) -> group(function () {
+Route::middleware(['auth'])->group(function () {
 
     Route::resource('modules', ModuleController::class);
     Route::get('/aulas', [ModuleController::class, 'index'])->name('aulas');
     Route::get('/aulas/{id}', [ModuleController::class, 'show'])->name('aulas.show');
+
+    // Rotas da competição
+    Route::get('/competicao', [CompeticaoController::class, 'index'])->name('competicao');
+    Route::get('/competicao/{id}', [CompeticaoController::class, 'show'])->name('competicao.perfil');
 
     $pages = [
         'dashboard' => 'dashboard',
@@ -32,12 +35,12 @@ Route::middleware(['auth']) -> group(function () {
         'informacoes' => 'informacoes',
         'configuracoes' => 'configuracoes',
         'meu-plano' => 'meu-plano',
-        'competicao' => 'competicao',
+        // 'competicao' saiu daqui porque agora usa controller
     ];
-    foreach ($pages as $uri => $view)
-    {
-        Route::view("/{$uri}", $view)-> name($uri);
+
+    foreach ($pages as $uri => $view) {
+        Route::view("/{$uri}", $view)->name($uri);
     }
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
